@@ -1,6 +1,6 @@
 import java.util.Scanner;
 // Every program must be a class -> Java is a class-first programming language
-public class L01BMICalculator {
+public class L02BMICalculator {
     // Every Java must have a main function. The main function can accpet command line arguments
     // and they will be stored in `args`
     public static void main(String[] args) {
