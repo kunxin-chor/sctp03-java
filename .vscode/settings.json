@@ -1,6 +1,8 @@
 {
     "java.project.sourcePaths": [
+        "03-stat-calculator-methods",
+        "02-stat-calculator.java",
         "01-basic-java-programming",
-        "02-stat-calculator.java"
+        "04-basic-of-classes"
     ]
 }
