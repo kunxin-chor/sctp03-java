@@ -30,33 +30,38 @@ public class Main {
         do {
             int choice =  displayMenu();
             if (choice==1) {
-                System.out.println("Add new product");
-                Scanner sc = new Scanner(System.in);
-                System.out.print("Enter name: ");
-                String name = sc.nextLine();
-                System.out.print("Enter price: ");
-                double price = sc.nextDouble();
-                sc.nextLine(); // get rid of the buffered \n
-                System.out.print("Enter SKU: ");
-                String sku = sc.nextLine();
-                Product newProduct = new Product(name, price, sku);
-                catalog.add(newProduct);
+               addNewProduct(catalog);
             }
             if (choice==2) {
-                System.out.println("List all products");
-                for (Product p : catalog) {
-                    System.out.println("Name: " + p.getName());
-                    System.out.println("Price: " + p.getPrice());
-                    System.out.println("SKU: " + p.getSku());
-                    System.out.println();
-                }
+               displayAllProducts(catalog);
             }
             if (choice==3) {
                 break;
             }
         } while (true);
-     
-      
+    }
 
+    public static void displayAllProducts(ArrayList<Product> catalog){
+        System.out.println("List all products");
+        for (Product p : catalog) {
+            System.out.println("Name: " + p.getName());
+            System.out.println("Price: " + p.getPrice());
+            System.out.println("SKU: " + p.getSku());
+            System.out.println();
+        }
+    }
+
+    public static void addNewProduct(ArrayList<Product> catalog) {
+        System.out.println("Add new product");
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter name: ");
+        String name = sc.nextLine();
+        System.out.print("Enter price: ");
+        double price = sc.nextDouble();
+        sc.nextLine(); // get rid of the buffered \n
+        System.out.print("Enter SKU: ");
+        String sku = sc.nextLine();
+        Product newProduct = new Product(name, price, sku);
+        catalog.add(newProduct);
     }
 }
