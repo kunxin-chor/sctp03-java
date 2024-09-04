@@ -1,5 +1,8 @@
 // extends  means this class inherits from another class (aka parent class/superclass)
 // all the attributes and methods of the parent class are also considered to be in the child class
+
+import java.util.Scanner;
+
 public class PhysicalProduct extends Product {
     private double weight;
     private int stock;
@@ -44,6 +47,20 @@ public class PhysicalProduct extends Product {
 
     public String toString() {
         return "Name: " + name + ", price: " + price + ", stock:" + stock;
+    }
+
+    @Override
+    public void edit() {
+        super.edit();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the new stock");
+        int newStock = sc.nextInt();
+        this.stock = newStock;
+
+        System.out.println("Enter the new weight");
+        double newWeight = sc.nextDouble();
+        this.weight = newWeight;
+
     }
 
     

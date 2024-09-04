@@ -10,12 +10,13 @@ public class Main {
             System.out.println("Main Menu");
             System.out.println("1. Add a product");
             System.out.println("2. List all products");
-            System.out.println("3. Quit");
+            System.out.println("3. Edit Product");
+            System.out.println("4. Quit");
 
             Scanner sc = new Scanner(System.in);
             System.out.print("Enter choice: ");
             int choice = sc.nextInt();
-            if (choice >= 1 && choice <= 3) {
+            if (choice >= 1 && choice <= 4) {
                 return choice;
             } else {
                 System.out.println("Invalid choice. Please choose between 1 to 3");
@@ -37,6 +38,9 @@ public class Main {
                 displayAllProducts(catalog);
             }
             if (choice == 3) {
+                editProduct(catalog);
+            }
+            if (choice==4) {
                 break;
             }
         } while (true);
@@ -107,5 +111,24 @@ public class Main {
 
         }
         catalog.add(newProduct);
+    }
+
+
+    public static void editProduct(ArrayList<Product> catalog) {
+
+        // 1. ask the user to select which product to edit
+        for (int i = 0; i < catalog.size(); i++) {
+            System.out.println(i + ": " + catalog.get(i).getName());
+        }
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter index to edit: ");
+        int productIndex = sc.nextInt();
+
+        // 2. base on the product, we will ask the questions for 
+        // the new values for the product
+        Product productToEdit = catalog.get(productIndex);
+        productToEdit.edit();
+
     }
 }

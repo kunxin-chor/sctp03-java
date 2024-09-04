@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class DigitalProduct extends Product {
     private String fileFormat;
     private int fileSize;
@@ -51,5 +53,27 @@ public class DigitalProduct extends Product {
         + "File Format: " + fileFormat + "\n"
         + "File Size: " + fileSize + "\n"
         + "File Name: " + filename + "\n";
+    }
+
+    @Override
+    public void edit() {
+        super.edit();
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the new file format");
+        String fileFormat = sc.nextLine();
+        this.fileFormat = fileFormat;
+
+        System.out.println("Enter the new file size: ");
+        int fileSize = sc.nextInt();
+        sc.nextLine(); // consume the buffered /n
+        this.fileSize = fileSize;
+
+        System.out.println("Enter the new filename: ");
+        String filename = sc.nextLine();
+        this.filename = filename;
+
+
+
     }
 }

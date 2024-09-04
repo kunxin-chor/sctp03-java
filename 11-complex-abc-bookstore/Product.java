@@ -1,5 +1,8 @@
 // Product class is public-access, meaning
 // any other classes can use it
+
+import java.util.Scanner;
+
 public class Product {
     protected String name;
     protected double price;
@@ -59,6 +62,23 @@ public class Product {
         return "Name: " + name + "\n" 
              + "SKU: " + sku + "\n"
              + "Price: " + price + "\n";
+    }
+
+    public void edit() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the new name for the product");
+        String newName = sc.nextLine();
+        this.name = newName;
+
+        System.out.println("Enter the new price for the product");
+        double newPrice = sc.nextDouble();
+        sc.nextLine(); // consume the buffered new line
+        this.price = newPrice;
+
+        System.out.println("Enter the new SKU for the product");
+        String sku = sc.nextLine();
+        this.sku = sku;
+
     }
 
 }
