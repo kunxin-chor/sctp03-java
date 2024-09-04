@@ -41,5 +41,9 @@ public class Animal {
         this.diet = diet;
     }
 
+    public void move() {
+        System.out.println("Moving");
+    }
+
     
 }

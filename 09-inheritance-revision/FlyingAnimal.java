@@ -1,6 +1,6 @@
 public class FlyingAnimal extends Animal {
     private double wingspan;
-    private void fly() {
+    public void fly() {
         System.out.println("Flying!");
     }
 

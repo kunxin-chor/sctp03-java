@@ -1,5 +1,6 @@
 {
     "java.project.sourcePaths": [
+        "09-inheritance-revision",
         "08-inheritance",
         "07-abc-bookstore",
         "06-constructors",
@@ -7,7 +8,8 @@
         "03-stat-calculator-methods",
         "02-stat-calculator.java",
         "01-basic-java-programming",
-        "09-inheritance-revision"
+        "10-area-calculator",
+        "11-complex-abc-bookstore"
     ],
     "java.dependency.packagePresentation": "hierarchical"
 }

@@ -1,6 +1,13 @@
 public class LandAnimal extends Animal {
     private int legs;
-    private void walk() {
+    public void walk() {
+        System.out.println("Walking");
+    }
+
+    // The @Override is a reminder that the programmer
+    // the method is actually "superceding" the one in the parent
+    @Override
+    public void move() {
         System.out.println("Walking");
     }
 
