@@ -1,5 +1,7 @@
-public class Circle extends Shape {
+public class Circle extends Shape
+     implements Colorable {
     private double radius;
+    private String color;
     public Circle() {
         super();
         radius = 0.0; // by default, all numbers have an inital value of 0
@@ -9,6 +11,16 @@ public class Circle extends Shape {
         super(name, y, x);
         this.radius = radius;
     }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+
 
     @Override
     public double getPerimeter() {

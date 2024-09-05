@@ -1,4 +1,11 @@
-public class Shape {
+
+// if a class contains at least one abstract method, it must be become an abstract class
+// (Note: it's possible for an abstract class not to have an abstract method)
+// An abstract class is one that you cannot instantiate
+// It is only meant for children to extend
+// An abstract class that have children is known
+// as an "ABC" - Abstract Base Class
+public abstract class Shape implements Drawable {
     protected String name;
     protected double y; // where on the y axis
     protected double x; // where on the x axis
@@ -9,19 +16,14 @@ public class Shape {
 
     public Shape(String name, double y, double x) {
         this.name = name;
+        this.y = y;
+        this.x = x;
     }
 
-    public double getPerimeter() {
-        // no idea how to calculate perimeter
-        // until we know what shape this
-        return 0;
-    }
-    public double getArea() {
-        // we have no idea what
-        // specific shape this will be
-        // hence we cannot calculate the area
-        return 0;
-    }
+    // an abstract method is one that should exists on all child classes 
+    // BUT the parent class has no way of writing it (i.e, there's no default implementation)
+    public abstract double getPerimeter();
+    public abstract double getArea();
 
     public String getName() {
         return name;

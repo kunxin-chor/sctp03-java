@@ -1,7 +1,13 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+// Use case for the program
+// 1. keep a list of shapes, and show their position, area and perimeter
+// 2. the program must be able to support text labels
+//    store all the shapes and text label in the same ArrayList
 public class Main {
+
+  
 
     // any member variables in the Main must be `static`
     // static methods can only access variables that are static
@@ -9,6 +15,16 @@ public class Main {
     private static Scanner sc = new Scanner(System.in);
 
     public static void main(String args[]) {
+
+        ArrayList<Drawable> canvas = new ArrayList<>();
+        canvas.add(new Circle());
+        canvas.add(new TextLabel());
+
+        ArrayList<Colorable> coloredStuff = new ArrayList<>();
+        coloredStuff.add(new Circle());
+        coloredStuff.add(new TextLabel());
+        coloredStuff.add(new Rectangle());
+
         while (true) {
             displayMenu();
             int choice = getMenuChoice();
